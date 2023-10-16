@@ -1,0 +1,200 @@
+body {font-family: sans-serif;}
+
+* {box-sizing: border-box}
+
+:root {
+    
+    --main-Color: #ff9800;
+}
+
+/* Global Style */
+.Container {margin: 0 8%;}
+.overlay {position: absolute; width: 100%; height: 100%; top: 0; bottom: 0; left: 0; right: 0; z-index: 2; background-color: rgba(0, 0, 0, .6);}
+.title {margin-bottom: 50px; text-align: center}
+.title::before {content: ''; background: var(--main-Color); height: 5px; width: 220px; margin-left: auto; margin-right: auto; display: block; transform: translateY(63px);} 
+.title::after {content: ''; background: var(--main-Color); height: 12px; width: 50px; margin-left: auto; margin-right: auto; display: block; transform: translateY(7px); margin-bottom: 40px;} 
+.subtitle::after {content: ''; background: var(--main-Color); height: 3px; width: 60px; margin: 7px auto; display: block}
+@media(max-width:321px) {
+    .title {font-size: 2px}
+}
+
+/*------------------------------ Start Fixed Menu ------------------------------*/
+.fixed-menu {background-color: #f1f1f1; position: fixed; top: 0; left: -250px; padding: 10px 5px; height: 100%; width: 250px; z-index: 4; text-align: center}
+.gear-icon {position: absolute; top: 90px; right: -40px; width: 40px; height: 40px; line-height: 1.2; text-align: center; cursor: pointer; border-radius: 0 5px 5px 0; color: var(--main-Color); border: 1px solid var(--main-Color); border-left: 0; background-color: #FFF}
+.fa-gear {line-height: 1.2}
+.option {background-color: #dadada; border-radius: 5px; padding: 3px 0 0; margin-bottom: 5px}
+.option h3 {margin-bottom: 7px; font-size: 22px; font-weight: bold}
+.option ul {padding: 0 5px; margin: 0}
+.fixed-menu .change-color li {width: 25px; height: 25px; margin: 0 3px; display: inline-block; cursor: pointer; border-radius: 50%; border: 4px solid transparent}
+.fixed-menu .change-color .active-color {border: 4px solid #333}
+.fixed-menu .change-color [data-color = "#ff9800"] {background-color: #ff9800;}
+.fixed-menu .change-color [data-color = "#0072bd"] {background-color: #0072bd;}
+.fixed-menu .change-color [data-color = "#0fc30f"] {background-color: #0fc30f;}
+.fixed-menu .change-color [data-color = "#e91e63"] {background-color: #e91e63;}
+.fixed-menu .change-color [data-color = "#d2d218"] {background-color: #d2d218;}
+.option h4 {font-weight: bold; font-size: 17px; margin: 3px 0 5px}
+.option span {background-color: var(--main-Color); color: #FFF; font-weight: bold; font-size: 13px; border-radius: 5px; cursor: pointer; padding: 5px 10px; margin: 5px 5px 8px; display: inline-block; border: 3px solid transparent}
+.option span.on {border: 3px solid #333}
+.fixed-menu button {background-color: #bb1616; color: #FFF; width: 100%; font-weight: bold; cursor: pointer; padding: 7px;; border: 0; outline-style: none; border-radius: 5px; margin-top: 8px}
+@media(max-width:991px) {
+    .gear-icon {background: none}
+}
+@media(max-width:767px) {
+    .fa-gear {top: 65px}
+    
+}
+/*---------------------------- End Fixed Menu -------------------------------*/
+
+
+/*--------------------------- Start Navbar -------------------------------*/
+.Navbar {background: none; color: #FFF; z-index: 5; position: fixed; width: 100%;}
+.my-container {margin: 0 8%; padding: 0; display: flex}
+.my-container > div {padding: 0;}
+.left {width: 25%;}
+.left span {font-size: 40px; font-weight: bold; color: var(--main-Color);}
+.right {width: 75%; text-align: right; position: relative;}
+.right ul {list-style: none; padding: 0; margin: 7px 0 0 0;}
+.right ul li {display: inline-block; font-weight: 550; font-size: 17px; cursor: pointer; margin: 10px;}
+.right ul li.active {color: var(--main-Color);}
+.right ul li:hover {color: var(--main-Color);}
+.fa-bars {position: absolute; right: 0; top: 13px; cursor: pointer; display: none;}
+.Nav-links {background-color: rgba(0, 0, 0, .8); color: #FFF; position: absolute; width: 100%; top: 60px; z-index: 5; border-top: 1px solid #FFF;  display: none;}
+.Nav-links li {list-style: none; font-weight: 550; font-size: 17px; padding: 7px 7px 7px 6%; cursor: pointer;}
+.Nav-links li:hover {color: var(--main-Color);}
+@media(max-width:991px) {
+    .Navbar {background-color: rgba(0, 0, 0, .8)}
+    .right ul {display: none}
+    .fa-bars {display: block;}  
+}
+/*---------------------------- End Navbar -------------------------------*/
+
+
+/*---------------------------- Start Header -------------------------------*/
+.header {position: relative; background-image: url('../Photos/5.jpg'); background-size: cover; height: 100vh}
+.header .body { text-align: center; color: #FFF}
+.header .body h1 {font-weight: bold; font-size: 65px; margin-bottom: 25px;}
+.header .body h1 span {color: var(--main-Color);}
+.header .body p {font-size: 18px; font-weight: 400; padding: 10px 3%}
+.header .dots {position: fixed; width: 150px; height: 235px; right: 0; cursor: pointer; z-index: 3;}
+.header-dot {overflow: hidden; padding: 0 10px 0 0; z-index: 5; height: 35px}
+.header-dot span {float: right; background-color: var(--main-Color); color: #FFF; padding: 5px 8px; font-size: 16px; display: none; border-radius: 5px}
+.header-dot li {list-style: none; height: 20px; width: 20px; border: 2px solid var(--main-Color); border-radius: 50%;  float: right; margin: 5px 0 0 2px}
+.header .dots li.filled {background-color: var(--main-Color)}
+@media(max-width:991px) {
+    .header .dots {display: none}
+}
+@media(max-width:787px){
+    .header .body h1 {font-size: 40px;}
+    .header .body p {padding: 10px 5%}
+}
+/*---------------------------- End Header -------------------------------*/
+
+
+/*---------------------------- Start About-Us -------------------------------*/
+.about-us {padding: 80px 0 20px; background: #f8f9fa;}
+.about-us .about-title {font-size: 40px; font-weight: bold}
+.about-us ul {margin-left: 20px; padding: 0}
+.about-us ul li {margin: 10px 0; font-weight: 400; font-size: 18px; color: #9c9c9c;}
+@media(max-width:767px) {
+    .title {font-size: 28px;}
+    .title::before{transform: translateY(50px)!important;}
+    .title::after{transform: translateY(8px)!important;}
+    .about-us .about-title {font-size: 30px}
+    .about-us ul li {font-size: 17px}
+}
+/*---------------------------- End About-Us -------------------------------*/
+
+/*-------------------------- Start Skills ---------------------------------*/
+.skills {background-color: #DDD; padding: 80px 0 30px}
+
+/*-------------------------- End Skills ------------------------------------*/
+
+/*-------------------------- Start Features ------------------------------*/
+.Features {padding: 80px 0 0;}
+.title::before {content: ''; background: var(--main-Color); height: 5px; width: 220px; margin-left: auto; margin-right: auto; display: block; transform: translateY(63px);} 
+.title::after {content: ''; background: var(--main-Color); height: 12px; width: 50px; margin-left: auto; margin-right: auto; display: block; transform: translateY(7px); margin-bottom: 40px;} 
+.subtitle::after {content: ''; background: var(--main-Color); height: 3px; width: 60px; margin: 7px auto; display: block}
+.serve {padding: 10px 20px 0; margin: 0}
+.services-img {width: 150px; margin-top: 20px ;}
+.serve h4 {font-weight: bold; margin-top: 15px}
+.Features .btn-primary {padding: 10px 25px; background-color: var(--main-Color); border: none; border-radius: 10px; margin-top: 15px}
+@media(max-width:768px) {
+}
+/*------------------------- End Features --------------------------------------*/
+
+
+/*-------------------------- Start Gallery ---------------------------------*/
+.gallery {padding: 80px 0 30px; position: relative;}
+.gallery .popup {position: fixed; width: 100%; height: 100vh; top: 0; left: 0; background-color: rgba(0,0,0, .9); z-index: 100; padding: 0; display: none;}
+.img-details {width: 50%; margin: auto; background-color: #FFF; text-align: center; padding: 12px; border-radius: 5px; position: relative}
+.img-details .fa-times {background-color: var(--main-Color); color: #FFF; border-radius: 50%;; height: 30px; width: 30px; font-size: 20px; font-weight: bold; line-height: 1.3; text-align: center; cursor: pointer; top: -10px; right: -10px; position: absolute;}
+.img-details span {margin-bottom: 10px; display: block; font-weight: bold; color: var(--main-Color)}
+.popup-img {overflow: hidden; border-radius: 5px; height: 360px}
+.popup-img img {width: 100%; height: 100%}
+.gallery .row .img {margin: 8px 10px; overflow: hidden; padding: 0; cursor: pointer; border-radius: 5px}
+.gallery .row .img img {width: 100%; height: 100%}
+@media(max-width:991px) {
+    .img-details {width: 80%}
+}
+@media(max-width:767px) {
+    .row-two {display: none}
+    .img-details {width: 90%;}
+    .popup-img {height: 200px}
+}
+@media(max-width:320px) {
+    .popup-img {height: 180px}
+}
+/*-------------------------- End Gallery -----------------------------------*/
+
+
+/*------------------------- Start Testimonials -----------------------------------*/
+#testimonials {padding-top: 70px; margin-top: 50px; position: relative;}
+.right-overlay {position: absolute; width: 50%; height: 100%; top: 0; left: 0; background-color: var(--main-Color); z-index: 1}
+.left-overlay {background-color: #333; right: 0; position: absolute; width: 50%; height: 100%; top: 0;}
+#testimonials .Container {z-index: 2; position: relative}
+#testimonials .row {padding-top: 20px!important}
+.test-heading {width: 100%; color: #FFF; margin-bottom: 0; padding: 0}
+.test-heading::after {content: ''; background: #333; height: 3px; width: 60px; margin: 7px; display: block}
+.testimonial {margin: 0 10px 20px 0; background-color: #FFF; box-shadow: 0 2px 10px #333; border-radius: 5px; padding: 8px 15px}
+.testimonial .desc {color: #9c9c9c;}
+.testimonial img {width: 100px; height: 100px; border-radius: 50%; margin: 0 10px 0 0; box-shadow: 0 2px 7px #333;}
+.user {display: inline-block; font-size: 16px; font-weight: 400}
+@media(max-width:991px) {
+    .right-overlay {background-color: #333}
+    .left-overlay {background-color: var(--main-Color)}
+    .test-heading::after {background: var(--main-Color)}
+}
+/*--------------------------- End Testimonials ------------------------------*/
+
+
+/*-------------------------- Start Contact -----------------------------------*/
+.contact {padding: 80px 0 0}
+.contact-us {display: flex; text-align: center; width: 65%; margin: auto; padding: 55px 0 145px}
+.contact-us .input {width: 50%; padding: 5px}
+.form-control {margin-bottom: 10px}
+.contact-us .message {width: 50%; padding: 5px}
+textarea {height: 134px}
+.contact-us .message .send {background-color: var(--main-Color); color: #FFF; cursor: pointer; border: 1px solid var(--main-Color); outline-style: none}
+.foot {background-color: #333; color: #FFF; font-size: 17.5px; text-align: center; padding: 20px}
+@media(max-width:991px) {
+    .contact-us {width: 100%; display: block; margin: auto; padding: 20px 0}
+    .contact-us .input {margin: auto; width: 90%}
+    .contact-us .message {padding-top: 0; margin: auto; width: 90%}
+}
+@media(max-width:425px) {
+    .contact-us {width: 100%; display: block; margin: auto; }
+    .contact-us .input {margin: auto; width: 99%}
+    .contact-us .message {padding-top: 0; margin: auto; width: 99%}
+}
+/*-------------------------- End Contact -------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
